@@ -21,3 +21,27 @@ C:\projects\cds\HDP5\HDP5\HDPClientObjLib\bin\Debug\System.Collections.Immutable
 C:\projects\cds\HDP5\HDP5\HDPClientObjLib\bin\Debug\System.Interactive.Async.xml
 C:\projects\cds\HDP5\HDP5\HDPClientObjLib\bin\Debug\System.Reflection.Metadata.dll
 C:\projects\cds\HDP5\HDP5\HDPClientObjLib\bin\Debug\System.Reflection.Metadata.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\HDPClientObjLib.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\HDPClientObjLib.pdb
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Collections.Immutable.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Interactive.Async.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Reflection.Metadata.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Windows.Interactivity.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Collections.Immutable.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Interactive.Async.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\bin\Debug\System.Reflection.Metadata.xml
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\obj\Debug\HDPClientObjLib.csprojResolveAssemblyReference.cache
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\obj\Debug\HDPClientObjLib.dll
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClientObjLib\obj\Debug\HDPClientObjLib.pdb

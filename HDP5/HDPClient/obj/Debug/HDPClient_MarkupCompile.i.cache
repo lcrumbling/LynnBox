@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\projects\cds\HDP5\HDP5\HDPClient\obj\Debug\
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClient\obj\Debug\
 HDPClient
 none
 false
 DEBUG;TRACE
-C:\projects\cds\HDP5\HDP5\HDPClient\App.xaml
-5-1645449964
+C:\Git\Third Party\ModernUITest1\HDP5\HDPClient\App.xaml
+6727319309
 
-14167579877
-20419212978
-MainWindow.xaml;SpecEditor.xaml;SpecLibraryCtl.xaml;SpecStyles.xaml;TradeEditor.xaml;
+15929954309
+20-1318035111
+HomeView.xaml;MainWindow.xaml;SpecEditor.xaml;SpecLibraryCtl.xaml;SpecStyles.xaml;TradeEditor.xaml;
 
-True
+False
 

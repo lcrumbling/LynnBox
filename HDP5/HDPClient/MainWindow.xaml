@@ -4,93 +4,22 @@
     xmlns:obj="clr-namespace:HDPClientObjLib;assembly=HDPClientObjLib"
     xmlns:local="clr-namespace:HDPClient"
     xmlns:mui="http://gu.com/ModernUI"    
+                  ContentSource="HomeView.xaml"
     Title="MainWindow" Height="350" Width="525">
-    <Window.Resources>        
-        <HierarchicalDataTemplate x:Key="TvwUnit" >
-            <TextBlock Text="{Binding UnitName}"></TextBlock>
-        </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate x:Key="TvwAddress" 
-                    DataType="{x:Type obj:Address}" 
-                    ItemTemplate="{StaticResource TvwUnit}"
-                    ItemsSource="{Binding Units}">
-            <TextBlock Text="{Binding FullAddress}"></TextBlock>
-        </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate x:Key="TvwAddrGroup" 
-                    DataType="{x:Type obj:AddressGroup}" 
-                    ItemsSource="{Binding Addresses}"
-                    ItemTemplate="{StaticResource TvwAddress}">
-            <TextBlock Text="{Binding Name}"></TextBlock>
-        </HierarchicalDataTemplate>
-        <Style x:Key="AddressGroupStyle">
-        </Style>
-    </Window.Resources>
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link DisplayName="Spec" Source="SpecEditor.xaml"></mui:Link>
+        <mui:Link DisplayName="Home" Source="HomeView.xaml"></mui:Link>
+    </mui:ModernWindow.TitleLinks>
+    
+    <mui:ModernWindow.MainMenu>
+        <mui:LinkGroup DisplayName="Group1" SelectedSource="HomeView.xaml">
+            <mui:Link DisplayName="Spec" Source="SpecEditor.xaml"></mui:Link>
+            <mui:Link DisplayName="Home" Source="HomeView.xaml"></mui:Link>
+        </mui:LinkGroup>
 
-    <Grid>
-            <DockPanel Grid.ColumnSpan="3">
-                <Menu DockPanel.Dock="Top">
-                    <MenuItem Header="_Tools">
-                        <MenuItem Header="_Spec Library" Command="{Binding ShowSpecLibraryCommand}" />
-                        <MenuItem Header="_Trade Editor" Command="{Binding ShowTradeEditorCommand}" />
-                    </MenuItem>
-                </Menu>
-                <TextBox AcceptsReturn="True" />
-            </DockPanel>
-            <Grid Margin="5,45,5,5">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="110*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="300*"/>
-                </Grid.ColumnDefinitions>
-
-                <TreeView Grid.Column="0"  ItemsSource="{Binding AddressGroups}" ItemTemplate="{StaticResource TvwAddrGroup}">
-                </TreeView>
-
-                <GridSplitter Grid.Column="1" 
-                        Width="5" BorderBrush="#FF6593CF"
-                        BorderThickness="0,1,0,0"
-                        HorizontalAlignment="Stretch" 
-                        ShowsPreview="True"/>
-
-                <Grid Grid.Column="2" HorizontalAlignment="Stretch">
-
-                    <TabControl ItemsSource="{Binding Tabs}" SelectedItem="{Binding SelectedTab}">
-                        <TabControl.ItemTemplate>
-                            <DataTemplate>
-                                <ContentControl Content="{Binding}">
-                                    <ContentControl.Resources>
-                                        <DataTemplate DataType="{x:Type obj:SpecLibrary}">
-                                            <TextBlock Text="Spec Library"></TextBlock>
-                                        </DataTemplate>
-                                        <DataTemplate DataType="{x:Type obj:Specification}">
-                                            <TextBlock Text="Spec"></TextBlock>
-                                        </DataTemplate>
-                                        <DataTemplate DataType="{x:Type obj:TradeList}">
-                                            <TextBlock Text="Trade Editor"></TextBlock>
-                                        </DataTemplate>
-                                    </ContentControl.Resources>
-                                </ContentControl>
-                            </DataTemplate>
-                        </TabControl.ItemTemplate>
-                        <TabControl.ContentTemplate>
-                            <DataTemplate>
-                                <ContentControl Content="{Binding}">
-                                    <ContentControl.Resources>
-                                        <DataTemplate DataType="{x:Type obj:SpecLibrary}">
-                                            <local:SpecLibraryCtl DataContext="{Binding}"></local:SpecLibraryCtl>
-                                        </DataTemplate>
-                                        <DataTemplate DataType="{x:Type obj:Specification}">
-                                            <local:SpecEditor DataContext="{Binding}"></local:SpecEditor>
-                                        </DataTemplate>
-                                        <DataTemplate DataType="{x:Type obj:TradeList}">
-                                            <local:TradeEditor DataContext="{Binding}"></local:TradeEditor>
-                                        </DataTemplate>
-                                    </ContentControl.Resources>
-                                </ContentControl>
-                            </DataTemplate>
-                        </TabControl.ContentTemplate>
-                    </TabControl>
-                </Grid>
-            </Grid>
-        </Grid>
+        <mui:LinkGroup DisplayName="Group2" SelectedSource="TradeEditor.xaml">
+            <mui:Link DisplayName="Spec" Source="TradeEditor.xaml"></mui:Link>
+            <mui:Link DisplayName="Home" Source="SpecLibraryCtl.xaml"></mui:Link>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MainMenu>
 </mui:ModernWindow>

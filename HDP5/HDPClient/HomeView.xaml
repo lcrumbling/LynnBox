@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="HDPClient.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:obj="clr-namespace:HDPClientObjLib;assembly=HDPClientObjLib"
+             xmlns:hdpClient="clr-namespace:HDPClient"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <HierarchicalDataTemplate x:Key="TvwUnit" >
+            <TextBlock Text="{Binding UnitName}"></TextBlock>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate x:Key="TvwAddress" 
+                    DataType="{x:Type obj:Address}" 
+                    ItemTemplate="{StaticResource TvwUnit}"
+                    ItemsSource="{Binding Units}">
+            <TextBlock Text="{Binding FullAddress}"></TextBlock>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate x:Key="TvwAddrGroup" 
+                    DataType="{x:Type obj:AddressGroup}" 
+                    ItemsSource="{Binding Addresses}"
+                    ItemTemplate="{StaticResource TvwAddress}">
+            <TextBlock Text="{Binding Name}"></TextBlock>
+        </HierarchicalDataTemplate>
+        <Style x:Key="AddressGroupStyle">
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Tools">
+                    <MenuItem Header="_Spec Library" Command="{Binding ShowSpecLibraryCommand}" />
+                    <MenuItem Header="_Trade Editor" Command="{Binding ShowTradeEditorCommand}" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+        <Grid Margin="5,45,5,5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="300*"/>
+            </Grid.ColumnDefinitions>
+
+            <TreeView Grid.Column="0"  ItemsSource="{Binding AddressGroups}" ItemTemplate="{StaticResource TvwAddrGroup}">
+            </TreeView>
+
+            <GridSplitter Grid.Column="1" 
+                        Width="5" BorderBrush="#FF6593CF"
+                        BorderThickness="0,1,0,0"
+                        HorizontalAlignment="Stretch" 
+                        ShowsPreview="True"/>
+
+            <Grid Grid.Column="2" HorizontalAlignment="Stretch">
+
+                <TabControl ItemsSource="{Binding Tabs}" SelectedItem="{Binding SelectedTab}">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}">
+                                <ContentControl.Resources>
+                                    <DataTemplate DataType="{x:Type obj:SpecLibrary}">
+                                        <TextBlock Text="Spec Library"></TextBlock>
+                                    </DataTemplate>
+                                    <DataTemplate DataType="{x:Type obj:Specification}">
+                                        <TextBlock Text="Spec"></TextBlock>
+                                    </DataTemplate>
+                                    <DataTemplate DataType="{x:Type obj:TradeList}">
+                                        <TextBlock Text="Trade Editor"></TextBlock>
+                                    </DataTemplate>
+                                </ContentControl.Resources>
+                            </ContentControl>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <TabControl.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}">
+                                <ContentControl.Resources>
+                                    <DataTemplate DataType="{x:Type obj:SpecLibrary}">
+                                        <hdpClient:SpecLibraryCtl DataContext="{Binding}"></hdpClient:SpecLibraryCtl>
+                                    </DataTemplate>
+                                    <DataTemplate DataType="{x:Type obj:Specification}">
+                                        <hdpClient:SpecEditor DataContext="{Binding}"></hdpClient:SpecEditor>
+                                    </DataTemplate>
+                                    <DataTemplate DataType="{x:Type obj:TradeList}">
+                                        <hdpClient:TradeEditor DataContext="{Binding}"></hdpClient:TradeEditor>
+                                    </DataTemplate>
+                                </ContentControl.Resources>
+                            </ContentControl>
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+                </TabControl>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
