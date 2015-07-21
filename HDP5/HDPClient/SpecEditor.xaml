@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="HDPClient.SpecEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="382.816" d:DesignHeight="329.885" >
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="189*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="288*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Spec Number:" VerticalAlignment="Center" HorizontalAlignment="Left" Height="16" Width="75" />
+        <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding SpecNumber}" VerticalAlignment="Center" HorizontalAlignment="Left"  Width="125" Height="22" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Spec Title:" VerticalAlignment="Center" HorizontalAlignment="Left" Height="16" Width="54" />
+        <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding SpecTitle}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="257" Height="22" Margin="0,0,-14,0" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Trade:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="33" Height="16" />
+        <ComboBox  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="187" 
+                   ItemsSource="{Binding DataContext.TradeList.AllTrades, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
+                   SelectedItem="{Binding Trade}" DisplayMemberPath="TradeDescription" SelectedValuePath="TradeID" Height="22" />
+    </Grid>
+</UserControl>

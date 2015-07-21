@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="SpecListBoxItem" DataType="ListBoxItem">
+        <Grid>
+            <Grid.InputBindings>
+                <MouseBinding Gesture="LeftDoubleClick"  CommandParameter="{Binding}" Command="{Binding DataContext.EditSpecCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"></MouseBinding>
+            </Grid.InputBindings>
+
+            <TextBlock Text="{Binding SpecNumber}" />
+            <TextBlock Margin="180,0,0,0" Text="{Binding SpecTitle}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TradeListBoxItem" DataType="ListBoxItem">
+        <Grid>
+            <Grid.InputBindings>
+                <MouseBinding Gesture="LeftDoubleClick"  CommandParameter="{Binding}" Command="{Binding DataContext.EditTradeCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"></MouseBinding>
+            </Grid.InputBindings>
+
+            <TextBlock Text="{Binding TradeNumber}" />
+            <TextBlock Margin="100,0,0,0" Text="{Binding TradeDescription}" />
+            <TextBlock Margin="300,0,0,0" Text="{Binding DateModified, StringFormat=d}" />
+        </Grid>
+    </DataTemplate>
+
+    
+
+</ResourceDictionary>
